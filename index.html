@@ -7,16 +7,12 @@
 	<script type="text/x-template" id="app-template">
 		<section>
 			
-			<li v-for="name in dataNames">
-				<span> {{ name }} </span>
-			</li>
-			
 			<form>
 				<input type="text" v-model.number="beforeIncrement" placeholder="Before Increment">
 				<input type="text" v-model.number="afterIncrement" placeholder="After Increment">
 			</form>
 			
-			<h2>Increment Percentage : {{ ((afterIncrement - beforeIncrement) / beforeIncrement) * 100 }}</h2>
+			<h2>Increment Percentage : {{ incrementPercentage }}</h2>
 			
 		</section>
 	</script>
