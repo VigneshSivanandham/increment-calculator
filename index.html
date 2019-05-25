@@ -1,0 +1,25 @@
+<head>
+	<title>My First Vue Application</title>
+</head>
+<body>
+	<h1>Increment Percentage Calculator</h1>
+	<div id="app"></div>
+	<script type="text/x-template" id="app-template">
+		<section>
+			
+			<li v-for="name in dataNames">
+				<span> {{ name }} </span>
+			</li>
+			
+			<form>
+				<input type="text" v-model.number="beforeIncrement" placeholder="Before Increment">
+				<input type="text" v-model.number="afterIncrement" placeholder="After Increment">
+			</form>
+			
+			<h2>Increment Percentage : {{ ((afterIncrement - beforeIncrement) / beforeIncrement) * 100 }}</h2>
+			
+		</section>
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
