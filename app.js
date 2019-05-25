@@ -5,11 +5,24 @@ new Vue({
 	data : { 
 		dataNames : names ,
 		beforeIncrement : '',
-		afterIncrement : ''
+		afterIncrement : '',
+		incrementPercentage : ''
+	},
+	watch : {
+		beforeIncrement : function() {
+			this.calculatePercentage();	
+		},
+		afterIncrement : function() {
+			this.calculatePercentage();
+		}
 	},
 	methods : {
 		calculatePercentage: function(){
-			
+			if(this.beforeIncrement !== '' && this.afterIncrement !== '') {
+				this.incrementPercentage = ((this.afterIncrement - this.beforeIncrement) / this.beforeIncrement) * 100;
+			} else {
+				this.incrementPercentage = '';
+			}
 		}
 	}
 });
